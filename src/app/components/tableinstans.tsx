@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import useFetch from "@/hooks/useFetch";
+import useFetch from "@/../../hooks/useFetch"; // Custom hook for fetching data
 
 import Table from "@/app/components/table";
+import { stringify } from "querystring";
 
 interface TableProps {
   api: string; //mandatory
@@ -33,13 +34,13 @@ const TableInstan: React.FC<TableProps> = ({
 
   useEffect(() => {
     if (api === "API SEKOLAH") {
-      setApii(process.env.NEXT_PUBLIC_API_SEKOLAH);
+      setApii(process.env.NEXT_PUBLIC_API_SEKOLAH || "");
     } else if (api === "API MENU") {
-      setApii(process.env.NEXT_PUBLIC_API_MENU);
+      setApii(process.env.NEXT_PUBLIC_API_MENU || "");
     } else if (api === "API GURU") {
-      setApii(process.env.NEXT_PUBLIC_API_GURU);
+      setApii(process.env.NEXT_PUBLIC_API_GURU || "");
     } else if (api === "API AGENCY") {
-      setApii(process.env.NEXT_PUBLIC_API_AGENCYRELATIONSHIP);
+      setApii(process.env.NEXT_PUBLIC_API_AGENCYRELATIONSHIP || "");
     }
   }, [RefreshKey, api]);
 

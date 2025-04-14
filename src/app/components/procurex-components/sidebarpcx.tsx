@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Logout from "@/app/components/buttonlogout";
+// import Logout from "@/app/components/buttonlogout";
 
 const Sidebar: React.FC = () => {
   const router = useRouter();
@@ -235,9 +235,7 @@ const Sidebar: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <div className="p-4">
-          <Logout />
-        </div>
+        <div className="p-4">{/* <Logout /> */}</div>
       </div>
     </aside>
   );
